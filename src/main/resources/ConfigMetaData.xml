@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean name="cus" class="com.twg.setterinjection.Customer">
+        <property name="name" value="Narendra"/>
+        <property name="contact" value="7660848241"/>
+        <property name="addresses">
+            <props>
+                <prop key="home">Gowdanahalli</prop>
+                <prop key="Study">Warangali</prop>
+                <prop key="office">Bengaluru</prop>
+            </props>
+        </property>
+    </bean>
+    <bean name="ord" class="com.twg.setterinjection.Order">
+        <constructor-arg value="p123"/>
+        <constructor-arg value="Apple MacBook"/>
+        <constructor-arg ref="cus"/>
+
+    </bean>
+
+
+
+
+
+</beans>
