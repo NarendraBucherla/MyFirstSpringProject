@@ -7,6 +7,17 @@ public class Customer {
     private String contact;
     private Properties addresses;
 
+
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", contact='" + contact + '\'' +
+                ", addresses=" + addresses +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

@@ -7,22 +7,28 @@
   http://www.springframework.org/schema/beans/spring-beans.xsd
   http://www.springframework.org/schema/context
   http://www.springframework.org/schema/context/spring-context.xsd">
+<context:annotation-config/>
 
-    <bean name="cus" class="com.twg.setterinjection.Customer">
+    <bean name="customer" class="com.twg.setterinjection.Customer">
         <property name="name" value="Narendra"/>
         <property name="contact" value="7660848241"/>
         <property name="addresses">
             <props>
                 <prop key="home">Gowdanahalli</prop>
-                <prop key="Study">Warangali</prop>
+            </props>
+        </property>
+    </bean>
+    <bean name="customer1" class="com.twg.setterinjection.Customer">
+        <property name="name" value="Bucherla"/>
+        <property name="contact" value="1428480667"/>
+        <property name="addresses">
+            <props>
                 <prop key="office">Bengaluru</prop>
             </props>
         </property>
     </bean>
-    <bean name="ord" class="com.twg.setterinjection.Order">
-        <constructor-arg value="p123"/>
-        <constructor-arg value="Apple MacBook"/>
-        <constructor-arg ref="cus"/>
+
+    <bean name="order" class="com.twg.setterinjection.Order">
 
     </bean>
 
