@@ -1,5 +1,6 @@
 package com.twg.setterinjection;
 
+import com.twg.setterinjection.jdbc.bsnlogic.EmployeeBzImp;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,10 +15,16 @@ public class App
 
         //ApplicationContext context = new FileSystemXmlApplicationContext("C:\\Users\\Ravindra Bucherla\\IdeaProjects\\myfirstproject\\src\\main\\java\\com\\twg\\setterinjection\\ConfigMetaData.xml");
         ApplicationContext context = new ClassPathXmlApplicationContext("ConfigMetaData.xml");
-
+       /*
+        //wiring
        Order order = (Order)context.getBean("order");
        System.out.println(order.toString());
        Customer customer = (Customer)context.getBean("customer");
-       //System.out.println(customer.toString());
+       System.out.println(customer.toString());
+        */
+        //JDBC
+        EmployeeBzImp employeeBzImp = (EmployeeBzImp)context.getBean("employeeBz");
+        employeeBzImp.printEmployeeHikes();
+
     }
 }

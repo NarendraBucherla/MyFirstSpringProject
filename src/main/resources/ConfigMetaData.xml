@@ -9,6 +9,9 @@
   http://www.springframework.org/schema/context/spring-context.xsd">
 <context:annotation-config/>
 
+    <bean name="employeeDao" class="com.twg.setterinjection.jdbc.dao.EmployeeDaoImp"/>
+    <bean name="employeeBz" class="com.twg.setterinjection.jdbc.bsnlogic.EmployeeBzImp"/>
+
     <bean name="customer" class="com.twg.setterinjection.Customer">
         <property name="name" value="Narendra"/>
         <property name="contact" value="7660848241"/>
