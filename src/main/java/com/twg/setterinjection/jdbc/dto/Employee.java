@@ -28,4 +28,13 @@ public class Employee {
     public void setExp(int exp) {
         this.exp = exp;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", exp=" + exp +
+                '}';
+    }
 }

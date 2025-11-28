@@ -7,10 +7,19 @@
   http://www.springframework.org/schema/beans/spring-beans.xsd
   http://www.springframework.org/schema/context
   http://www.springframework.org/schema/context/spring-context.xsd">
-<context:annotation-config/>
 
-    <bean name="employeeDao" class="com.twg.setterinjection.jdbc.dao.EmployeeDaoImp"/>
-    <bean name="employeeBz" class="com.twg.setterinjection.jdbc.bsnlogic.EmployeeBzImp"/>
+    <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/spring"/>
+        <property name="username" value="root"/>
+        <property name="password" value="Sathya@02"/>
+    </bean>
+
+    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <context:component-scan base-package="com.twg.setterinjection"/>
 
     <bean name="customer" class="com.twg.setterinjection.Customer">
         <property name="name" value="Narendra"/>

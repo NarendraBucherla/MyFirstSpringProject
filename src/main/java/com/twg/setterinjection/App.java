@@ -1,6 +1,8 @@
 package com.twg.setterinjection;
 
-import com.twg.setterinjection.jdbc.bsnlogic.EmployeeBzImp;
+//import com.twg.setterinjection.jdbc.bsnlogic.EmployeeBzImp;
+import com.twg.setterinjection.jdbc.dto.Employee;
+import com.twg.setterinjection.springjdbc.bzlogic.BzlogicSJ;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -23,8 +25,16 @@ public class App
        System.out.println(customer.toString());
         */
         //JDBC
-        EmployeeBzImp employeeBzImp = (EmployeeBzImp)context.getBean("employeeBz");
-        employeeBzImp.printEmployeeHikes();
+        //EmployeeBzImp employeeBzImp = (EmployeeBzImp)context.getBean("bzlogicImpSJ");
+        BzlogicSJ employeeBzImp = (BzlogicSJ)context.getBean("bzlogicImpSJ");
+       // employeeBzImp.printEmployeeHikes();
+        System.out.println(employeeBzImp.getEmployee(2));
+        Employee employee = new Employee();
+        employee.setName("Ravindra Bucherla");
+        employee.setExp(5);
+        //employeeBzImp.addEmployee(employee);
+        System.out.println(employeeBzImp.getEmployee(5));
+
 
     }
 }

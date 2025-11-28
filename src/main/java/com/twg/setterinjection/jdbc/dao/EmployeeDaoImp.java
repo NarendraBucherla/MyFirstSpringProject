@@ -1,6 +1,7 @@
 package com.twg.setterinjection.jdbc.dao;
 
 import com.twg.setterinjection.jdbc.dto.Employee;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class EmployeeDaoImp implements EmployeeDao {
     @Override
     public List<Employee> getEmployees() {
